@@ -6,16 +6,15 @@ import { SignUpPage } from './pages/SignUpPage';
 import { UserInfoPage } from './pages/UserInfoPage';
 import { PasswordResetLandingPage } from './pages/PasswordResetLandingPage';
 import { PleaseVerifyEmailPage } from './pages/PleaseVerifyEmailPage';
-// import { PrivateRoute } from './auth/PrivateRoute';
+import { PrivateRoute } from './auth/PrivateRoute';
 
 export const AppContents = () => {
     return (
         <Router>
             <Routes>
-                {/* <PrivateRoute path="/" exact>
-                    <UserInfoPage />
-                </PrivateRoute> */}
-                <Route path="/" element={   <UserInfoPage />}/>
+                <Route path="/" element={ <PrivateRoute>
+                <UserInfoPage />
+                </PrivateRoute>}/>
                 <Route path="/verify-email/:verificationString" element={<EmailVerificationLandingPage />} />
                 <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                 <Route path="/login" element={<LogInPage />} />
