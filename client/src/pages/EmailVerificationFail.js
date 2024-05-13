@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 export const EmailVerificationFail = () => {
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className="content-container">
@@ -9,7 +9,7 @@ export const EmailVerificationFail = () => {
             <p>
                 Something went wrong while trying to verify your email.
             </p>
-            <button onClick={() => history.push('/signup')}>Back to Sign-up</button>
+            <button onClick={() => navigate('/signup')}>Back to Sign-up</button>
         </div>
     );
 }
